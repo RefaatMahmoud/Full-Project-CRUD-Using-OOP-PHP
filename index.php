@@ -1,6 +1,5 @@
 <?php
 ob_start();
-session_start();
 $page_title = "Index Page";
 include "init.php";
 ?>
