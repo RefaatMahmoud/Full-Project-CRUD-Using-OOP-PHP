@@ -1,8 +1,8 @@
-.left-margin{
-    margin:0 .5em 0 0;
+.left-margin {
+    margin: 0 .5em 0 0;
 }
 
-.right-button-margin{
+.right-button-margin {
     margin: 0 0 1em 0;
     overflow: hidden;
 }
@@ -13,19 +13,15 @@
     text-align: center !important;
 }
 
-.modal-footer{
+.modal-footer {
     text-align: center !important;
 }
-.Para
-{
-    color: #F00;
-}
-.Edit-Form
-{
+
+.Edit-Form {
     color: #4cae4c;
 }
+
 .table-bordered .Edit-Form,
-.table-bordered .Delete-Form
-{
+.table-bordered .Delete-Form {
     display: inline-block;
 }

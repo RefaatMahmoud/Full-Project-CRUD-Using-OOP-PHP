@@ -1,11 +1,7 @@
 <?php
-//include "connect.php";
 //Routes
 $tpl = "include/Templetes/";
-//$fun = "include/Function/";
 $css = "Layout/CSS/";
-$js =  "Layout/JS/";
-//Important Files arrangemnt is important
-//include $fun . "function.php";
+$js = "Layout/JS/";
 include $tpl . "header.php";
 ?>

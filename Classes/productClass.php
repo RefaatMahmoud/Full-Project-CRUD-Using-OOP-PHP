@@ -1,5 +1,6 @@
 <?php
 require_once 'databaseClass.php';
+
 class productClass extends databaseClass
 {
     //properties of this class in product table
@@ -10,7 +11,8 @@ class productClass extends databaseClass
     public $description;
 
     //Create Product Method
-    public function create(){
+    public function create()
+    {
         $query = "INSERT INTO products (name,price,description,cat_id) VALUES (:name,:price,:description,:cat_id)";
         //prepare Statement
         $stmt = $this->conn->prepare($query);
@@ -20,15 +22,15 @@ class productClass extends databaseClass
         $stmt->bindParam(":description", $this->description);
         $stmt->bindParam(":cat_id", $this->cat_id);
         $stmt->execute();
-/*
- * or if you not userd bindParam
- *  $stmt->execute(array(
-            "name" => $this->name,
-            "price" => $this->price,
-            "description" => $this->description,
-            "cat_id" => $this->cat_id
-            ));
- * */
+        /*
+         * or if you not userd bindParam
+         *  $stmt->execute(array(
+                    "name" => $this->name,
+                    "price" => $this->price,
+                    "description" => $this->description,
+                    "cat_id" => $this->cat_id
+                    ));
+         * */
     }
 
     /*
@@ -39,7 +41,7 @@ class productClass extends databaseClass
         $query = "SELECT * FROM products ";
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
-        $rows =  $stmt->fetchAll();
+        $rows = $stmt->fetchAll();
         return $rows;
     }
 
@@ -50,9 +52,10 @@ class productClass extends databaseClass
     {
         $query = "DELETE FROM products WHERE id = $id ";
         $stmt = $this->conn->prepare($query);
-        $stmt->bindParam($id,$this->id);
+        $stmt->bindParam($id, $this->id);
         $stmt->execute();
     }
+
     /*
      * Select specific row
      * is used to get Data in Edit Form
@@ -63,13 +66,14 @@ class productClass extends databaseClass
         //prepare query
         $stmt = $this->conn->prepare($query);
         //Make Binding
-        $stmt->bindParam($id,$this->id);
+        $stmt->bindParam($id, $this->id);
         //Execute Statment
         $stmt->execute();
         //Fetch column in row variable
         $row = $stmt->fetch();
         return $row;
     }
+
     /*
      * Make Update Method in Edit Form
      * */

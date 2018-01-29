@@ -2,7 +2,7 @@
 
 class databaseClass
 {
-    // specify your own database credentials
+    // specify your own database authentication
     private $host = "localhost";
     private $db_name = "app";
     private $username = "root";
@@ -22,6 +22,6 @@ class databaseClass
         }
         return $this->conn;
     }
-
 }
+
 ?>

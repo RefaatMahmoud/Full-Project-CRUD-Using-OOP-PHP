@@ -1,12 +1,9 @@
 <?php
+//Call DataBase File as require_once NOT require because will make error which will be two classes with same name
 require_once 'databaseClass.php';
+
 class categoryClass extends databaseClass
 {
-    private $table_name = "category";
-    // object properties
-    public $id;
-    public $name;
-
     public function __construct()
     {
         return parent::__construct();
@@ -18,10 +15,9 @@ class categoryClass extends databaseClass
         $query = "SELECT * FROM category ";
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
-        $rows =  $stmt->fetchAll();
+        $rows = $stmt->fetchAll();
         return $rows;
     }
-
 }
 
 ?>

@@ -7,16 +7,15 @@ $page_title = "Product Page";
 include "init.php";
 ?>
 <?php
-//Create Product
-if($_SERVER['REQUEST_METHOD'] == "POST")
-{
-    if(isset($_POST['create_btn']))
-    {
+//get Data From Form
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    if (isset($_POST['create_btn'])) {
         $product = new productClass();
         $product->name = $_POST['name'];
         $product->price = $_POST['price'];
         $product->description = $_POST['description'];
         $product->cat_id = $_POST['cat_id'];
+        //Send Data to DataBase
         $product->create();
         echo "<div class='alert alert-success'>Product was created.</div>";
     }
@@ -67,7 +66,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
             </tr>
         </table>
     </form>
-    <h4><a href="products.php">Go TO ALl Products in Sysytem</a></h4>
+   <a href="products.php">Go to all products in System</a>
 
 <?php
 include "Include/Templetes/footer.php";

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 28, 2018 at 12:17 PM
+-- Generation Time: Jan 29, 2018 at 05:33 AM
 -- Server version: 10.1.24-MariaDB
 -- PHP Version: 7.1.6
 
@@ -33,6 +33,14 @@ CREATE TABLE `category` (
   `name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`id`, `name`) VALUES
+(1, 'Computer'),
+(2, 'Mobile');
+
 -- --------------------------------------------------------
 
 --
@@ -46,6 +54,13 @@ CREATE TABLE `products` (
   `price` int(10) NOT NULL,
   `cat_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`id`, `name`, `description`, `price`, `cat_id`) VALUES
+(28, 'Laptop', 'is Dell Laptop ..............', 1200, 1);
 
 --
 -- Indexes for dumped tables
@@ -71,12 +86,12 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;COMMIT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
