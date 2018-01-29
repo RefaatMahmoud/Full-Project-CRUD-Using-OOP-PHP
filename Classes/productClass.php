@@ -53,5 +53,37 @@ class productClass extends databaseClass
         $stmt->bindParam($id,$this->id);
         $stmt->execute();
     }
+    /*
+     * Select specific row
+     * is used to get Data in Edit Form
+     * */
+    public function getItem($id)
+    {
+        $query = "SELECT * FROM products WHERE id = $id LIMIT 1";
+        //prepare query
+        $stmt = $this->conn->prepare($query);
+        //Make Binding
+        $stmt->bindParam($id,$this->id);
+        //Execute Statment
+        $stmt->execute();
+        //Fetch column in row variable
+        $row = $stmt->fetch();
+        return $row;
+    }
+    /*
+     * Make Update Method in Edit Form
+     * */
+    public function update()
+    {
+        $query = "UPDATE products SET name = :name , price = :price , description = :description , cat_id = :cat_id WHERE id = :id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute(array(
+            ":name" => $this->name,
+            ":price" => $this->price,
+            ":description" => $this->description,
+            ":cat_id" => $this->cat_id,
+            ":id" => $this->id
+        ));
+    }
 
 }
