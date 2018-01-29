@@ -20,3 +20,12 @@
 {
     color: #F00;
 }
+.Edit-Form
+{
+    color: #4cae4c;
+}
+.table-bordered .Edit-Form,
+.table-bordered .Delete-Form
+{
+    display: inline-block;
+}

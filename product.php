@@ -67,7 +67,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
             </tr>
         </table>
     </form>
-
+    <h4><a href="products.php">Go TO ALl Products in Sysytem</a></h4>
 
 <?php
 include "Include/Templetes/footer.php";

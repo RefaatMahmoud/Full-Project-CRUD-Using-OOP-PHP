@@ -31,4 +31,27 @@ class productClass extends databaseClass
  * */
     }
 
+    /*
+     * readAll Data in products Table
+     * */
+    public function readALl()
+    {
+        $query = "SELECT * FROM products ";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        $rows =  $stmt->fetchAll();
+        return $rows;
+    }
+
+    /*
+     * Delete single record in products table
+     * */
+    public function Delete($id)
+    {
+        $query = "DELETE FROM products WHERE id = $id ";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam($id,$this->id);
+        $stmt->execute();
+    }
+
 }
