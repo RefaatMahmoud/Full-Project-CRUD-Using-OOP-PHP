@@ -1,3 +1,0 @@
-This is Full Project using oop PHP 
-Project : CRUD System for products 
-By Refaat Aish
